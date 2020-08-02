@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-import 'package:base_sample/model/repository/http_request/responsible.dart';
-import 'package:base_sample/model/repository/http_request/from_map.dart';
-import 'package:base_sample/model/repository/http_request/Error/custom_error.dart';
+import 'package:base_sample/application_model/repository/http_request/responsible.dart';
+import 'package:base_sample/application_model/repository/http_request/from_map.dart';
+import 'package:base_sample/application_model/repository/http_request/Error/custom_error.dart';
 
 enum MethodType {
   get,
