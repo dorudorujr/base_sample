@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 import 'package:base_sample/model/repository/http_request/responsible.dart';
-import 'package:base_sample/model/repository/http_request/factory_map.dart';
+import 'package:base_sample/model/repository/http_request/from_map.dart';
 import 'package:base_sample/model/repository/http_request/Error/custom_error.dart';
 
 enum MethodType {
