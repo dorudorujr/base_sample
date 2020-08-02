@@ -15,7 +15,7 @@ class GetRequestable<R extends Responsible, P extends Parameterizable> extends R
     await request(
       /// uri
       parameters is PathParameterizable ?
-      Uri.https(hostName, path, parameters.queryParameters) : Uri.https(hostName, path),
+        Uri.https(hostName, path, parameters.queryParameters) : Uri.https(hostName, path),
       /// MethodType
       MethodType.get,
       /// parameters
