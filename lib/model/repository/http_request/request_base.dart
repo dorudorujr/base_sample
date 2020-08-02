@@ -73,7 +73,7 @@ class RequestBase {
   T getResponseJson<T extends Responsible>() {
     final decodeBody = utf8.decode(_response.bodyBytes);
     final dynamic responseBody = json.decode(decodeBody);
-    final responseObject = factory[T](responseBody) as T;
+    final responseObject = factory[T](responseBody) as T;   /// ResponsibleのfromJson呼び出し
 
     if (responseObject != null) {
       return responseObject;
