@@ -4,7 +4,7 @@ import 'package:base_sample/application_model/repository/sample/util/nothing_par
 
 class AccountInfoRequest extends GetRequestable<AccountInfoResponse, NothingParameter> {
   /// 通信先情報
-  String hostName = 'https://run.mocky.io';
+  String hostName = 'run.mocky.io';
   String path = '/v3/fb72a27c-4fdd-49c8-8fd6-8b4ad92ac12a';
 }
 
