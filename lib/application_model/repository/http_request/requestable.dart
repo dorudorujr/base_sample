@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:base_sample/application_model/repository/http_request/responsible.dart';
 import 'package:base_sample/application_model/repository/http_request/parametalizable.dart';
 import 'package:base_sample/application_model/repository/http_request/request_base.dart';
@@ -12,25 +9,42 @@ abstract class Requestable extends RequestBase {
   String path;
 }
 
-abstract class GetRequestable extends Requestable {
-  Future<Responsible> get(Parameterizable parameters);
-}
-
-extension getRequestable on GetRequestable {
-  Future<T> get<T extends Responsible>(Parameterizable parameters) async {
+/// Getリクエストを行うクラス
+class GetRequestable<R extends Responsible, P extends Parameterizable> extends Requestable {
+  Future<R> get(P parameters) async {
     await request(
       /// uri
       parameters is PathParameterizable ?
-        Uri.https(hostName, path, parameters.queryParameters) : Uri.https(hostName, path),
+      Uri.https(hostName, path, parameters.queryParameters) : Uri.https(hostName, path),
       /// MethodType
       MethodType.get,
       /// parameters
       parameters is PathParameterizable ?
-        {} : parameters.toJson(),
+      {} : parameters.toJson(),
       /// header
       RequestBase.headers
     );
 
-    return getResponseJson<T>();
+    return getResponseJson<R>();
+  }
+}
+
+/// Postリクエストをクラス
+class PostRequestablee<R extends Responsible, P extends Parameterizable> extends Requestable {
+  Future<R> post(P parameters) async {
+    await request(
+      /// uri
+      parameters is PathParameterizable ?
+      Uri.https(hostName, path, parameters.queryParameters) : Uri.https(hostName, path),
+      /// MethodType
+      MethodType.post,
+      /// parameters
+      parameters is PathParameterizable ?
+      {} : parameters.toJson(),
+      /// header
+      RequestBase.headers
+    );
+
+    return getResponseJson<R>();
   }
 }
