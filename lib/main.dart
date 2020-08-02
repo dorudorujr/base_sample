@@ -61,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            /// TODO: sampleをもう少しいい感じにする(アーキ適用など)
             FutureBuilder(
               future: AccountInfoRequest().get(NothingParameter()),
               builder: (BuildContext context, AsyncSnapshot<AccountInfoResponse> snapshot) {
