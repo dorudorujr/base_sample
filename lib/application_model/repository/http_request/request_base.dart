@@ -14,8 +14,12 @@ enum MethodType {
 }
 
 class RequestBase {
+  /// http通信によって取得したresponse
   http.Response _response;
+  /// http通信のtimeout
   final Duration _timeout = Duration(seconds: 20);
+  /// header
+  static Map<String, String> headers = {'Content-Type': 'application/json'};
 
   /**
    * request(http通信)を行いresponseを取得する

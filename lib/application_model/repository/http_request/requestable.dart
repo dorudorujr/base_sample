@@ -5,20 +5,19 @@ import 'package:base_sample/application_model/repository/http_request/responsibl
 import 'package:base_sample/application_model/repository/http_request/parametalizable.dart';
 import 'package:base_sample/application_model/repository/http_request/request_base.dart';
 
-abstract class Requestable <R,P> extends RequestBase {
+abstract class Requestable extends RequestBase {
 
   /// 通信先情報
-  Uri uri;
   String hostName;
   String path;
 }
 
-abstract class GetRequestable extends Requestable <Responsible, Parameterizable> {
+abstract class GetRequestable extends Requestable {
   Future<Responsible> get(Parameterizable parameters);
 }
 
 extension getRequestable on GetRequestable {
-  Future<Responsible> get(Parameterizable parameters) async {
+  Future<T> get<T extends Responsible>(Parameterizable parameters) async {
     await request(
       /// uri
       parameters is PathParameterizable ?
@@ -29,9 +28,9 @@ extension getRequestable on GetRequestable {
       parameters is PathParameterizable ?
         {} : parameters.toJson(),
       /// header
-      {}
+      RequestBase.headers
     );
 
-    return getResponseJson<Responsible>();
+    return getResponseJson<T>();
   }
 }
