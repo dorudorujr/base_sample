@@ -41,7 +41,7 @@ class RequestBase {
           _response = await http.post(
             uri,
             headers: headers,
-            body: json.encode(parameters)
+            body: parameters
           ).timeout(_timeout);
           break;
 
@@ -50,7 +50,7 @@ class RequestBase {
           _response = await http.put(
             uri,
             headers: headers,
-            body: json.encode(parameters)
+            body: parameters
           ).timeout(_timeout);
           break;
 
