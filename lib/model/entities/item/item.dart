@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
 part 'item.freezed.dart';
-part 'item.g.dart';
+part 'item.g.dart';   /// json変換処理追加
 
 @freezed
 abstract class Item with _$Item {
@@ -15,6 +15,6 @@ abstract class Item with _$Item {
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
-  @late
+  @late /// 遅延初期化(freezedの機能)
   String get priceWithUnit => '$price円+税';
 }
