@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+class ItemInfo extends StatelessWidget {
+  const ItemInfo({
+    Key key,
+    this.title,
+    this.price,
+    this.info,
+  }) : super(key: key);
+
+  final String title;
+  final String price;
+  final Widget info;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textStyleMain = theme.textTheme.subtitle1;
+    /// Expanded: 子のウィジェットが使用可能なスペースを埋めるようWidgetを展開する
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: textStyleMain,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text(
+              price,
+              style: textStyleMain,
+            ),
+          ),
+          info,
+        ],
+      ),
+    );
+  }
+}
