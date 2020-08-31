@@ -20,8 +20,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # 自動生成ツール
+  build_runner:
   freezed:
   json_serializable:
+
+  # テスト
   mockito:
 flutter:
   uses-material-design: true
