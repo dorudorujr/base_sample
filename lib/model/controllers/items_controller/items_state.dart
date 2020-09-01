@@ -13,10 +13,12 @@ abstract class ItemsState implements _$ItemsState {
 
   ItemsState._();
 
+  /// stocksからidを元にMapを作成する
   @late
   Map<int, ItemStock> get _map => Map.fromEntries(
     stocks.map((s) => MapEntry(s.item.id, s)),
   );
 
+  /// _mapメソッドを使用してstocksからidを用いてItemStockを取得する
   ItemStock stock(int id) => _map[id];
 }
