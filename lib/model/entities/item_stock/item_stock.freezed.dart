@@ -35,6 +35,8 @@ abstract class $ItemStockCopyWith<$Res> {
   factory $ItemStockCopyWith(ItemStock value, $Res Function(ItemStock) then) =
       _$ItemStockCopyWithImpl<$Res>;
   $Res call({Item item, int quantity});
+
+  $ItemCopyWith<$Res> get item;
 }
 
 class _$ItemStockCopyWithImpl<$Res> implements $ItemStockCopyWith<$Res> {
@@ -54,6 +56,16 @@ class _$ItemStockCopyWithImpl<$Res> implements $ItemStockCopyWith<$Res> {
       quantity: quantity == freezed ? _value.quantity : quantity as int,
     ));
   }
+
+  @override
+  $ItemCopyWith<$Res> get item {
+    if (_value.item == null) {
+      return null;
+    }
+    return $ItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
 }
 
 abstract class _$ItemStockCopyWith<$Res> implements $ItemStockCopyWith<$Res> {
@@ -62,6 +74,9 @@ abstract class _$ItemStockCopyWith<$Res> implements $ItemStockCopyWith<$Res> {
       __$ItemStockCopyWithImpl<$Res>;
   @override
   $Res call({Item item, int quantity});
+
+  @override
+  $ItemCopyWith<$Res> get item;
 }
 
 class __$ItemStockCopyWithImpl<$Res> extends _$ItemStockCopyWithImpl<$Res>
