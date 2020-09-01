@@ -15,6 +15,6 @@ abstract class Item with _$Item {
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
-  @late /// 遅延初期化(freezedの機能)
+  @late /// 遅延初期化(freezedの機能)。一度使った値を自動でキャッシュ
   String get priceWithUnit => '$price円+税';
 }
