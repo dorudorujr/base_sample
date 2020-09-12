@@ -13,6 +13,7 @@ abstract class ItemsState implements _$ItemsState {
 
   ItemsState._();
 
+  /// late: 一度使った値を自動でキャッシュしてくれる(immutableなクラスなので本来は値を保持できない)
   /// stocksからidを元にMapを作成する
   @late
   Map<int, ItemStock> get _map => Map.fromEntries(
