@@ -11,15 +11,17 @@ abstract class CartState implements _$CartState {
 
   CartState._();
 
+  /// idでソートしたCartItemを返す
   @late
   List<CartItem> get sortedItems =>
     itemMap.values.toList()..sort((a, b) => a.item.id.compareTo(b.item.id));
 
   @late
   CartSummary get summary => CartSummary(
+    ///fold: 与えられた関数を使って要素を単一の値に圧縮
     quantity: itemMap.values.fold<int>(
-      0,
-        (sum, e) => sum + e.quantity,
+      0,  /// 初期値
+        (sum, e) => sum + e.quantity, ///(curr, next)
     ),
     totalPrice: itemMap.values.fold<int>(
       0,
@@ -27,6 +29,7 @@ abstract class CartState implements _$CartState {
     ),
   );
 
+  /// 与えられたitemと一致するものをitemMapから取得する
   CartItem cartItem(Item item) => sortedItems.firstWhere(
       (cartItem) => cartItem.item == item,
     orElse: () => null,
