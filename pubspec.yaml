@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation:
-  hooks_riverpod: ^0.6.1
+  hooks_riverpod: ^0.9.1
   flutter_hooks:
   cupertino_icons: ^0.1.3
 
