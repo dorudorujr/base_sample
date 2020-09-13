@@ -110,9 +110,14 @@ class _$_CartState extends _CartState {
     if (_didsummary == false) {
       _didsummary = true;
       _summary = CartSummary(
+        ///fold: 与えられた関数を使って要素を単一の値に圧縮
         quantity: itemMap.values.fold<int>(
           0,
+
+          /// 初期値
           (sum, e) => sum + e.quantity,
+
+          ///(curr, next)
         ),
         totalPrice: itemMap.values.fold<int>(
           0,
