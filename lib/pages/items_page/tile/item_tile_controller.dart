@@ -13,12 +13,13 @@ class ItemTileController extends StateNotifier<ItemTileState> {
       @required this.id,  /// idを持ったMap?
     }) : super(ItemTileState()) {
     /// 在庫の更新処理
+    /// カート情報が更新されたら呼び出される
     _cartControllerRemoveListener = _read(cartProvider).addListener(  /// addListener: stateが変更されるたびに実行される
         (cartState) {
-        final cartItem = cartState.cartItem(stock.item);
+        final cartItem = cartState.cartItem(stock.item);  /// カート情報からidが一致する商品情報を取得
         final cartItemQuantity = cartItem?.quantity ?? 0;
         state = state.copyWith(
-          quantity: stock.quantity - cartItemQuantity,  /// 在庫更新
+          quantity: stock.quantity - cartItemQuantity,  /// 在庫更新(APIから取得した在庫数 - カート情報の個数)
         );
       },
     );
@@ -32,6 +33,7 @@ class ItemTileController extends StateNotifier<ItemTileState> {
   /// idを元にAPIから取得した商品を取得する
   ItemStock get stock => _read(itemsProvider).state.stock(id);
 
+  /// カートに商品を追加
   void addToCart() => _read(cartProvider).add(stock.item);
 
   @override

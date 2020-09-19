@@ -9,6 +9,7 @@ import 'model.dart';
 
 final _client = Client();
 
+/// Futureを返すProvider
 // ignore: top_level_function_literal_block
 final itemsFetcher = FutureProvider((ref) async {
   final result = await _client.get(

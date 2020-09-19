@@ -11,6 +11,8 @@ final cartProvider = StateNotifierProvider((ref) => CartController());
 class CartController extends StateNotifier<CartState> {
   CartController() : super(CartState());
 
+  /// カートに商品を追加
+  /// カートに引数で渡されたitemが存在しない場合はCartItemを作成してincreased
   void add(Item item) {
     state = state.copyWith(
       /// ...: スプレッド演算子
@@ -27,6 +29,7 @@ class CartController extends StateNotifier<CartState> {
     );
   }
 
+  /// カートの商品を削除
   void delete(Item item) {
     state = state.copyWith(
       itemMap: {

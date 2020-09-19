@@ -11,7 +11,7 @@ abstract class CartState implements _$CartState {
 
   CartState._();
 
-  /// idでソートしたCartItemを返す
+  /// idでソートしたCartItemのListを返す
   @late
   List<CartItem> get sortedItems =>
     itemMap.values.toList()..sort((a, b) => a.item.id.compareTo(b.item.id));

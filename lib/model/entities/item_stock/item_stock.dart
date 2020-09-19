@@ -5,6 +5,7 @@ import '../entities.dart';
 
 part 'item_stock.freezed.dart';
 
+/// APIから取得した商品情報
 @freezed
 abstract class ItemStock implements _$ItemStock {
   factory ItemStock({

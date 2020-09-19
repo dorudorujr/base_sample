@@ -24,7 +24,7 @@ class ItemTile extends HookWidget {
   @override
   Widget build(BuildContext context) {
     const indent = 16.0;
-    final item = useProvider(itemTileProviders(id)).stock.item;
+    final item = useProvider(itemTileProviders(id)).stock.item; /// APIからidを元にitemを取得
     final quantity = useProvider(
       itemTileProviders(id).state.select((s) => s.quantity),
     );

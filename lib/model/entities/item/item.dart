@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 part 'item.freezed.dart';
 part 'item.g.dart';   /// json変換処理追加
 
+/// 各商品情報
 /// メソッドを定義しなくてもいい時はwith
 @freezed
 abstract class Item with _$Item {

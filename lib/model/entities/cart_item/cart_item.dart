@@ -4,6 +4,7 @@ import '../entities.dart';
 
 part 'cart_item.freezed.dart';
 
+/// 商品情報
 @freezed
 abstract class CartItem implements _$CartItem {
   factory CartItem({
