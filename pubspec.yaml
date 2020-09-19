@@ -10,9 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation:
-  hooks_riverpod: ^0.6.1
-  flutter_hooks:
+  hooks_riverpod: ^0.9.1
+  flutter_hooks:  0.13.2  # TODO:現最新バージョン0.14.0だとこける
   cupertino_icons: ^0.1.3
+  disposable_provider:
 
   # http通信
   http: 0.12.2
@@ -20,7 +21,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # 自動生成ツール
+  build_runner:
   freezed:
+  json_serializable:
+
+  # テスト
   mockito:
 flutter:
   uses-material-design: true
