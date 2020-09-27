@@ -16,6 +16,7 @@ void main() {
 
   /// テストケースが実行される直前に毎回呼ばれる
   setUp(() {
+    /// Providerの値を仮の値に変更できる
     final container = ProviderContainer(
       overrides: [
         itemsFetcher.overrideWithValue(AsyncValue.data([item])),
