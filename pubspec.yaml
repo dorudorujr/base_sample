@@ -29,5 +29,6 @@ dev_dependencies:
 
   # テスト
   mockito:
+  image_test_utils:
 flutter:
   uses-material-design: true
