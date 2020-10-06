@@ -10,6 +10,6 @@ final Map<Type, Function> factory = <Type, Function> {
   AccountInfoResponse: (Map<String, dynamic> json) =>
                           AccountInfoResponse.fromJson(json),
   /// アーキテクチャを使用したsample
-  ItemsStockResponse: (Map<String, dynamic> json) =>
+  ItemsStockResponse: (List<dynamic> json) =>
                           ItemsStockResponse.fromJson(json),
 };
