@@ -8,7 +8,7 @@ class ItemsStockResponse extends Responsible {
 
   factory ItemsStockResponse.fromJson(List<dynamic> json) {
     return ItemsStockResponse(
-      itemStock: (json as List).cast<Map<String, dynamic>>().map(ItemStock.fromJson).toList()
+      itemStock: json.cast<Map<String, dynamic>>().map(ItemStock.fromJson).toList()
     );
   }
 
