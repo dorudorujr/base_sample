@@ -12,14 +12,11 @@ abstract class CartState implements _$CartState {
   CartState._();
 
   /// idでソートしたCartItemのListを返す
-  //@late
-  /// TODO: late付与
-  List<CartItem> get sortedItems =>
-    itemMap.values.toList()..sort((a, b) => a.item.id.compareTo(b.item.id));
+  /// TODO: finalでいい？
+  late List<CartItem> sortedItems = itemMap.values.toList()..sort((a, b) => a.item.id.compareTo(b.item.id));
 
-  //@late
-  /// TODO: late付与
-  CartSummary get summary => CartSummary(
+  /// TODO: finalでいい？
+  late CartSummary summary = CartSummary(
     ///fold: 与えられた関数を使って要素を単一の値に圧縮
     quantity: itemMap.values.fold<int>(
       0,  /// 初期値
@@ -45,10 +42,8 @@ abstract class CartSummary with _$CartSummary {
     @Default(0) int totalPrice,
   }) = _CartSummary;
 
-  //@late
-  /// TODO: late付与
-  String get state => 'カート($quantity)';
-  //@late
-  /// TODO: late付与
-  String get totalPriceState => '合計金額 $totalPrice円+税';
+  /// TODO: finalでいい？
+  late String state = 'カート($quantity)';
+  /// TODO: finalでいい？
+  late String totalPriceState = '合計金額 $totalPrice円+税';
 }

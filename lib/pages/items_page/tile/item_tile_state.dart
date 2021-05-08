@@ -8,7 +8,6 @@ abstract class ItemTileState with _$ItemTileState {
     @Default(0) int quantity,
   }) = _ItemTileState;
 
-  //@late
-  /// TODO: late付与
-  bool get hasStock => quantity > 0;
+  /// TODO: finalでいい？
+  late bool hasStock = quantity > 0;
 }
