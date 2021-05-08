@@ -22,7 +22,7 @@ void main() {
         itemsFetcher.overrideWithValue(AsyncValue.data([item])),
       ],
     );
-    target = container.read(itemsProvider); /// itemsProvider内でitemsFetcherを使用できるようにした
+    target = container.read(itemsProvider.notifier); /// itemsProvider内でitemsFetcherを使用できるようにした
   });
 
   test('ItemsController test', () async {

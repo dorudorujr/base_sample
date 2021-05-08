@@ -6,7 +6,7 @@ import 'cart_state.dart';
 
 export 'cart_state.dart';
 
-final cartProvider = StateNotifierProvider((ref) => CartController());
+final cartProvider = StateNotifierProvider<CartController, CartState>((ref) => CartController());
 
 class CartController extends StateNotifier<CartState> {
   CartController() : super(CartState());

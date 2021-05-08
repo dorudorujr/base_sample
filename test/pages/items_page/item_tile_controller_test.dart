@@ -34,7 +34,7 @@ void main() {
     );
   });
   test('ItemTileController test', () async {
-    final target = container.read(itemTileProviders(stock.item.id));
+    final target = container.read(itemTileProviders(stock.item.id).notifier);
     expect(target.debugState.quantity, 1);
     expect(target.debugState.hasStock, isTrue);
 
