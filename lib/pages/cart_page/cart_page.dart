@@ -10,11 +10,11 @@ import 'cart_tile.dart';
 
 /// 使われなくなったら自動で破棄される
 final _shouldPop = Provider.autoDispose(
-    (ref) => ref.watch(cartProvider.state).summary.totalPrice <= 0,
+    (ref) => ref.watch(cartProvider).summary.totalPrice <= 0,
 );
 
 class CartPage extends HookWidget {
-  const CartPage({Key key}) : super(key: key);
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _ListView extends HookWidget {
   const _ListView();
   @override
   Widget build(BuildContext context) {
-    final items = useProvider(cartProvider.state.select((s) => s.sortedItems));
+    final items = useProvider(cartProvider.select((s) => s.sortedItems));
     return ListView.builder(
       padding: const EdgeInsets.symmetric(vertical: 8),
       itemCount: items.length,

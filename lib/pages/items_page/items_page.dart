@@ -8,7 +8,7 @@ import 'cart_button.dart';
 import 'tile/item_tile.dart';
 
 class ItemsPage extends StatelessWidget {
-  const ItemsPage({Key key}) : super(key: key);
+  const ItemsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class _ListView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final isLoading =
-      useProvider(itemsProvider.state.select((s) => s.isLoading));
+      useProvider(itemsProvider.select((s) => s.isLoading));
     final ids = useProvider(
-      itemsProvider.state.select((s) => s.stocks.map((s) => s.item.id)),
+      itemsProvider.select((s) => s.stocks.map((s) => s.item.id)),
       ).toList();
     return isLoading
       ? const Center(child: CircularProgressIndicator())

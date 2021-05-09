@@ -6,7 +6,7 @@ import 'package:base_sample/model/model.dart';
 import 'package:base_sample/pages/items_page/tile/item_tile.dart';
 
 void main() {
-  ProviderContainer container;
+  late ProviderContainer container;
   ProviderReference ref;
   final stock = ItemStock(
     item: Item(
@@ -26,7 +26,7 @@ void main() {
     final provider = Provider((ref) => ref);
     ref = container.read(provider); /// ref=itemsFetcherをreadできるようにした？
     // Wait for items loaded
-    final itemsController = ref.read(itemsProvider);
+    final itemsController = ref.read(itemsProvider.notifier);
     /// expectLater:非同期の比較？
     await expectLater(
       itemsController.stream.map((s) => s.isLoading).first,
@@ -34,7 +34,7 @@ void main() {
     );
   });
   test('ItemTileController test', () async {
-    final target = container.read(itemTileProviders(stock.item.id));
+    final target = container.read(itemTileProviders(stock.item.id).notifier);
     expect(target.debugState.quantity, 1);
     expect(target.debugState.hasStock, isTrue);
 

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_stock.dart';
 
@@ -9,11 +9,14 @@ part of 'item_stock.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$ItemStockTearOff {
   const _$ItemStockTearOff();
 
-// ignore: unused_element
-  _ItemStock call({@required Item item, @required int quantity}) {
+  _ItemStock call({required Item item, required int quantity}) {
     return _ItemStock(
       item: item,
       quantity: quantity,
@@ -21,16 +24,20 @@ class _$ItemStockTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ItemStock = _$ItemStockTearOff();
 
+/// @nodoc
 mixin _$ItemStock {
-  Item get item;
-  int get quantity;
+  Item get item => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
 
-  $ItemStockCopyWith<ItemStock> get copyWith;
+  @JsonKey(ignore: true)
+  $ItemStockCopyWith<ItemStock> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ItemStockCopyWith<$Res> {
   factory $ItemStockCopyWith(ItemStock value, $Res Function(ItemStock) then) =
       _$ItemStockCopyWithImpl<$Res>;
@@ -39,6 +46,7 @@ abstract class $ItemStockCopyWith<$Res> {
   $ItemCopyWith<$Res> get item;
 }
 
+/// @nodoc
 class _$ItemStockCopyWithImpl<$Res> implements $ItemStockCopyWith<$Res> {
   _$ItemStockCopyWithImpl(this._value, this._then);
 
@@ -48,26 +56,30 @@ class _$ItemStockCopyWithImpl<$Res> implements $ItemStockCopyWith<$Res> {
 
   @override
   $Res call({
-    Object item = freezed,
-    Object quantity = freezed,
+    Object? item = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_value.copyWith(
-      item: item == freezed ? _value.item : item as Item,
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $ItemCopyWith<$Res> get item {
-    if (_value.item == null) {
-      return null;
-    }
     return $ItemCopyWith<$Res>(_value.item, (value) {
       return _then(_value.copyWith(item: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$ItemStockCopyWith<$Res> implements $ItemStockCopyWith<$Res> {
   factory _$ItemStockCopyWith(
           _ItemStock value, $Res Function(_ItemStock) then) =
@@ -79,6 +91,7 @@ abstract class _$ItemStockCopyWith<$Res> implements $ItemStockCopyWith<$Res> {
   $ItemCopyWith<$Res> get item;
 }
 
+/// @nodoc
 class __$ItemStockCopyWithImpl<$Res> extends _$ItemStockCopyWithImpl<$Res>
     implements _$ItemStockCopyWith<$Res> {
   __$ItemStockCopyWithImpl(_ItemStock _value, $Res Function(_ItemStock) _then)
@@ -89,21 +102,26 @@ class __$ItemStockCopyWithImpl<$Res> extends _$ItemStockCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object item = freezed,
-    Object quantity = freezed,
+    Object? item = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_ItemStock(
-      item: item == freezed ? _value.item : item as Item,
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_ItemStock extends _ItemStock with DiagnosticableTreeMixin {
-  _$_ItemStock({@required this.item, @required this.quantity})
-      : assert(item != null),
-        assert(quantity != null),
-        super._();
+  _$_ItemStock({required this.item, required this.quantity}) : super._();
 
   @override
   final Item item;
@@ -141,20 +159,23 @@ class _$_ItemStock extends _ItemStock with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(item) ^
       const DeepCollectionEquality().hash(quantity);
 
+  @JsonKey(ignore: true)
   @override
   _$ItemStockCopyWith<_ItemStock> get copyWith =>
       __$ItemStockCopyWithImpl<_ItemStock>(this, _$identity);
 }
 
 abstract class _ItemStock extends ItemStock {
-  _ItemStock._() : super._();
-  factory _ItemStock({@required Item item, @required int quantity}) =
+  factory _ItemStock({required Item item, required int quantity}) =
       _$_ItemStock;
+  _ItemStock._() : super._();
 
   @override
-  Item get item;
+  Item get item => throw _privateConstructorUsedError;
   @override
-  int get quantity;
+  int get quantity => throw _privateConstructorUsedError;
   @override
-  _$ItemStockCopyWith<_ItemStock> get copyWith;
+  @JsonKey(ignore: true)
+  _$ItemStockCopyWith<_ItemStock> get copyWith =>
+      throw _privateConstructorUsedError;
 }

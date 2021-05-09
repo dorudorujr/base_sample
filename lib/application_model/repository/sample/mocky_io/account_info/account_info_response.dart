@@ -3,7 +3,7 @@ import 'package:base_sample/application_model/repository/sample/mocky_io/account
 
 class AccountInfoResponse extends Responsible {
   AccountInfoResponse({
-    this.accountInfo
+    required this.accountInfo
   });
 
   /// デコード用 factory コンストラクタ

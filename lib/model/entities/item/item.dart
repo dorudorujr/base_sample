@@ -9,14 +9,15 @@ part 'item.g.dart';   /// json変換処理追加
 @freezed
 abstract class Item with _$Item {
   factory Item({
-    @required int id,
-    @required int price,
-    @required String title,
-    @required String imageUrl,
+    required int id,
+    required int price,
+    required String title,
+    required String imageUrl,
   }) = _Item;
+  Item._();
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
-  @late /// 遅延初期化(freezedの機能)。一度使った値を自動でキャッシュ
-  String get priceWithUnit => '$price円+税';
+  /// 遅延初期化(freezedの機能)。一度使った値を自動でキャッシュ
+  late final String priceWithUnit = '$price円+税';
 }

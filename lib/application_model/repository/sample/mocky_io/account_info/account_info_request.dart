@@ -3,8 +3,10 @@ import 'package:base_sample/application_model/repository/sample/mocky_io/account
 import 'package:base_sample/application_model/repository/sample/util/nothing_parameter.dart';
 
 class AccountInfoRequest extends GetRequestable<AccountInfoResponse, NothingParameter> {
+  AccountInfoRequest({this.hostName = "run.mocky.io", this.path = "/v3/fb72a27c-4fdd-49c8-8fd6-8b4ad92ac12a"});
+
   /// 通信先情報
-  String hostName = 'run.mocky.io';
-  String path = '/v3/fb72a27c-4fdd-49c8-8fd6-8b4ad92ac12a';
+  String hostName;
+  String path;
 }
 

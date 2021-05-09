@@ -2,9 +2,7 @@ import 'package:base_sample/application_model/repository/http_request/http_reque
 import 'package:base_sample/model/entities/entities.dart';
 
 class ItemsStockResponse extends Responsible {
-  ItemsStockResponse({
-    this.itemStock
-  });
+  ItemsStockResponse({required this.itemStock});
 
   factory ItemsStockResponse.fromJson(List<dynamic> json) {
     return ItemsStockResponse(

@@ -15,7 +15,8 @@ enum MethodType {
 
 class RequestBase {
   /// http通信によって取得したresponse
-  http.Response _response;
+  /// TODO: lateじゃない方法を探る
+  late http.Response _response;
   /// http通信のtimeout
   final Duration _timeout = Duration(seconds: 20);
   /// header
@@ -77,12 +78,10 @@ class RequestBase {
   T getResponseJson<T extends Responsible>() {
     final decodeBody = utf8.decode(_response.bodyBytes);
     final dynamic responseBody = json.decode(decodeBody);
-    final responseObject = factory[T](responseBody) as T;   /// ResponsibleのfromJson呼び出し
+    if (factory[T] == null) { throw CustomError('factoryへの定義漏れ'); }
+    final responseObject = factory[T]!(responseBody) as T;   /// ResponsibleのfromJson呼び出し
 
-    if (responseObject != null) {
-      return responseObject;
-    } else {
-      throw CustomError('Mapping Error');
-    }
+    /// TODO: factory[T]!(responseBody)でマッピングできなかった時の考慮追加
+    return responseObject;
   }
 }

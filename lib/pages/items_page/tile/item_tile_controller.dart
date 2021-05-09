@@ -10,11 +10,11 @@ export 'item_tile_state.dart';
 class ItemTileController extends StateNotifier<ItemTileState> {
   ItemTileController(
     this._read, {
-      @required this.id,  /// idを持ったMap?
+      required this.id,  /// idを持ったMap?
     }) : super(ItemTileState()) {
     /// 在庫の更新処理
     /// カート情報が更新されたら呼び出される
-    _cartControllerRemoveListener = _read(cartProvider).addListener(  /// addListener: stateが変更されるたびに実行される
+    _cartControllerRemoveListener = _read(cartProvider.notifier).addListener(  /// addListener: stateが変更されるたびに実行される
         (cartState) {
         final cartItem = cartState.cartItem(stock.item);  /// カート情報からidが一致する商品情報を取得
         final cartItemQuantity = cartItem?.quantity ?? 0;
@@ -28,13 +28,13 @@ class ItemTileController extends StateNotifier<ItemTileState> {
   final Reader _read;
 
   final int id;
-  VoidCallback _cartControllerRemoveListener;
+  late final VoidCallback _cartControllerRemoveListener;
 
   /// idを元にAPIから取得した商品を取得する
-  ItemStock get stock => _read(itemsProvider).state.stock(id);
+  ItemStock get stock => _read(itemsProvider).stock(id);
 
   /// カートに商品を追加
-  void addToCart() => _read(cartProvider).add(stock.item);
+  void addToCart() => _read(cartProvider.notifier).add(stock.item);
 
   @override
   void dispose() {

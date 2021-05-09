@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'item_tile_state.dart';
 
@@ -9,10 +9,13 @@ part of 'item_tile_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$ItemTileStateTearOff {
   const _$ItemTileStateTearOff();
 
-// ignore: unused_element
   _ItemTileState call({int quantity = 0}) {
     return _ItemTileState(
       quantity: quantity,
@@ -20,15 +23,19 @@ class _$ItemTileStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ItemTileState = _$ItemTileStateTearOff();
 
+/// @nodoc
 mixin _$ItemTileState {
-  int get quantity;
+  int get quantity => throw _privateConstructorUsedError;
 
-  $ItemTileStateCopyWith<ItemTileState> get copyWith;
+  @JsonKey(ignore: true)
+  $ItemTileStateCopyWith<ItemTileState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ItemTileStateCopyWith<$Res> {
   factory $ItemTileStateCopyWith(
           ItemTileState value, $Res Function(ItemTileState) then) =
@@ -36,6 +43,7 @@ abstract class $ItemTileStateCopyWith<$Res> {
   $Res call({int quantity});
 }
 
+/// @nodoc
 class _$ItemTileStateCopyWithImpl<$Res>
     implements $ItemTileStateCopyWith<$Res> {
   _$ItemTileStateCopyWithImpl(this._value, this._then);
@@ -46,14 +54,18 @@ class _$ItemTileStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object quantity = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_value.copyWith(
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$ItemTileStateCopyWith<$Res>
     implements $ItemTileStateCopyWith<$Res> {
   factory _$ItemTileStateCopyWith(
@@ -63,6 +75,7 @@ abstract class _$ItemTileStateCopyWith<$Res>
   $Res call({int quantity});
 }
 
+/// @nodoc
 class __$ItemTileStateCopyWithImpl<$Res>
     extends _$ItemTileStateCopyWithImpl<$Res>
     implements _$ItemTileStateCopyWith<$Res> {
@@ -75,36 +88,29 @@ class __$ItemTileStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object quantity = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_ItemTileState(
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-class _$_ItemTileState implements _ItemTileState {
-  _$_ItemTileState({this.quantity = 0}) : assert(quantity != null);
+/// @nodoc
+
+class _$_ItemTileState extends _ItemTileState {
+  _$_ItemTileState({this.quantity = 0}) : super._();
 
   @JsonKey(defaultValue: 0)
   @override
   final int quantity;
 
-  bool _didhasStock = false;
-  bool _hasStock;
-
-  @override
-  bool get hasStock {
-    if (_didhasStock == false) {
-      _didhasStock = true;
-      _hasStock = quantity > 0;
-    }
-    return _hasStock;
-  }
-
   @override
   String toString() {
-    return 'ItemTileState(quantity: $quantity, hasStock: $hasStock)';
+    return 'ItemTileState(quantity: $quantity)';
   }
 
   @override
@@ -120,16 +126,20 @@ class _$_ItemTileState implements _ItemTileState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(quantity);
 
+  @JsonKey(ignore: true)
   @override
   _$ItemTileStateCopyWith<_ItemTileState> get copyWith =>
       __$ItemTileStateCopyWithImpl<_ItemTileState>(this, _$identity);
 }
 
-abstract class _ItemTileState implements ItemTileState {
+abstract class _ItemTileState extends ItemTileState {
   factory _ItemTileState({int quantity}) = _$_ItemTileState;
+  _ItemTileState._() : super._();
 
   @override
-  int get quantity;
+  int get quantity => throw _privateConstructorUsedError;
   @override
-  _$ItemTileStateCopyWith<_ItemTileState> get copyWith;
+  @JsonKey(ignore: true)
+  _$ItemTileStateCopyWith<_ItemTileState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

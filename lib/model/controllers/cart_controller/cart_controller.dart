@@ -6,7 +6,9 @@ import 'cart_state.dart';
 
 export 'cart_state.dart';
 
-final cartProvider = StateNotifierProvider((ref) => CartController());
+final cartProvider = StateNotifierProvider<CartController, CartState>(
+      (ref) => CartController(),
+);
 
 class CartController extends StateNotifier<CartState> {
   CartController() : super(CartState());
@@ -34,7 +36,7 @@ class CartController extends StateNotifier<CartState> {
     state = state.copyWith(
       itemMap: {
         ...state.itemMap,
-        item.id: state.itemMap[item.id].decreased(),
+        item.id: state.itemMap[item.id]!.decreased(),
       }..removeWhere((key, value) => value.quantity <= 0),
     );
   }

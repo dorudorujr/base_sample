@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'cart_state.dart';
 
@@ -9,10 +9,13 @@ part of 'cart_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$CartStateTearOff {
   const _$CartStateTearOff();
 
-// ignore: unused_element
   _CartState call({Map<int, CartItem> itemMap = const <int, CartItem>{}}) {
     return _CartState(
       itemMap: itemMap,
@@ -20,21 +23,26 @@ class _$CartStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $CartState = _$CartStateTearOff();
 
+/// @nodoc
 mixin _$CartState {
-  Map<int, CartItem> get itemMap;
+  Map<int, CartItem> get itemMap => throw _privateConstructorUsedError;
 
-  $CartStateCopyWith<CartState> get copyWith;
+  @JsonKey(ignore: true)
+  $CartStateCopyWith<CartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CartStateCopyWith<$Res> {
   factory $CartStateCopyWith(CartState value, $Res Function(CartState) then) =
       _$CartStateCopyWithImpl<$Res>;
   $Res call({Map<int, CartItem> itemMap});
 }
 
+/// @nodoc
 class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
   _$CartStateCopyWithImpl(this._value, this._then);
 
@@ -44,15 +52,18 @@ class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object itemMap = freezed,
+    Object? itemMap = freezed,
   }) {
     return _then(_value.copyWith(
-      itemMap:
-          itemMap == freezed ? _value.itemMap : itemMap as Map<int, CartItem>,
+      itemMap: itemMap == freezed
+          ? _value.itemMap
+          : itemMap // ignore: cast_nullable_to_non_nullable
+              as Map<int, CartItem>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$CartStateCopyWith<$Res> implements $CartStateCopyWith<$Res> {
   factory _$CartStateCopyWith(
           _CartState value, $Res Function(_CartState) then) =
@@ -61,6 +72,7 @@ abstract class _$CartStateCopyWith<$Res> implements $CartStateCopyWith<$Res> {
   $Res call({Map<int, CartItem> itemMap});
 }
 
+/// @nodoc
 class __$CartStateCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
     implements _$CartStateCopyWith<$Res> {
   __$CartStateCopyWithImpl(_CartState _value, $Res Function(_CartState) _then)
@@ -71,66 +83,29 @@ class __$CartStateCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object itemMap = freezed,
+    Object? itemMap = freezed,
   }) {
     return _then(_CartState(
-      itemMap:
-          itemMap == freezed ? _value.itemMap : itemMap as Map<int, CartItem>,
+      itemMap: itemMap == freezed
+          ? _value.itemMap
+          : itemMap // ignore: cast_nullable_to_non_nullable
+              as Map<int, CartItem>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_CartState extends _CartState {
-  _$_CartState({this.itemMap = const <int, CartItem>{}})
-      : assert(itemMap != null),
-        super._();
+  _$_CartState({this.itemMap = const <int, CartItem>{}}) : super._();
 
   @JsonKey(defaultValue: const <int, CartItem>{})
   @override
   final Map<int, CartItem> itemMap;
 
-  bool _didsortedItems = false;
-  List<CartItem> _sortedItems;
-
-  @override
-  List<CartItem> get sortedItems {
-    if (_didsortedItems == false) {
-      _didsortedItems = true;
-      _sortedItems = itemMap.values.toList()
-        ..sort((a, b) => a.item.id.compareTo(b.item.id));
-    }
-    return _sortedItems;
-  }
-
-  bool _didsummary = false;
-  CartSummary _summary;
-
-  @override
-  CartSummary get summary {
-    if (_didsummary == false) {
-      _didsummary = true;
-      _summary = CartSummary(
-        ///fold: 与えられた関数を使って要素を単一の値に圧縮
-        quantity: itemMap.values.fold<int>(
-          0,
-
-          /// 初期値
-          (sum, e) => sum + e.quantity,
-
-          ///(curr, next)
-        ),
-        totalPrice: itemMap.values.fold<int>(
-          0,
-          (sum, e) => sum + e.item.price * e.quantity,
-        ),
-      );
-    }
-    return _summary;
-  }
-
   @override
   String toString() {
-    return 'CartState(itemMap: $itemMap, sortedItems: $sortedItems, summary: $summary)';
+    return 'CartState(itemMap: $itemMap)';
   }
 
   @override
@@ -145,25 +120,28 @@ class _$_CartState extends _CartState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(itemMap);
 
+  @JsonKey(ignore: true)
   @override
   _$CartStateCopyWith<_CartState> get copyWith =>
       __$CartStateCopyWithImpl<_CartState>(this, _$identity);
 }
 
 abstract class _CartState extends CartState {
-  _CartState._() : super._();
   factory _CartState({Map<int, CartItem> itemMap}) = _$_CartState;
+  _CartState._() : super._();
 
   @override
-  Map<int, CartItem> get itemMap;
+  Map<int, CartItem> get itemMap => throw _privateConstructorUsedError;
   @override
-  _$CartStateCopyWith<_CartState> get copyWith;
+  @JsonKey(ignore: true)
+  _$CartStateCopyWith<_CartState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$CartSummaryTearOff {
   const _$CartSummaryTearOff();
 
-// ignore: unused_element
   _CartSummary call({int quantity = 0, int totalPrice = 0}) {
     return _CartSummary(
       quantity: quantity,
@@ -172,16 +150,20 @@ class _$CartSummaryTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $CartSummary = _$CartSummaryTearOff();
 
+/// @nodoc
 mixin _$CartSummary {
-  int get quantity;
-  int get totalPrice;
+  int get quantity => throw _privateConstructorUsedError;
+  int get totalPrice => throw _privateConstructorUsedError;
 
-  $CartSummaryCopyWith<CartSummary> get copyWith;
+  @JsonKey(ignore: true)
+  $CartSummaryCopyWith<CartSummary> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CartSummaryCopyWith<$Res> {
   factory $CartSummaryCopyWith(
           CartSummary value, $Res Function(CartSummary) then) =
@@ -189,6 +171,7 @@ abstract class $CartSummaryCopyWith<$Res> {
   $Res call({int quantity, int totalPrice});
 }
 
+/// @nodoc
 class _$CartSummaryCopyWithImpl<$Res> implements $CartSummaryCopyWith<$Res> {
   _$CartSummaryCopyWithImpl(this._value, this._then);
 
@@ -198,16 +181,23 @@ class _$CartSummaryCopyWithImpl<$Res> implements $CartSummaryCopyWith<$Res> {
 
   @override
   $Res call({
-    Object quantity = freezed,
-    Object totalPrice = freezed,
+    Object? quantity = freezed,
+    Object? totalPrice = freezed,
   }) {
     return _then(_value.copyWith(
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
-      totalPrice: totalPrice == freezed ? _value.totalPrice : totalPrice as int,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPrice: totalPrice == freezed
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$CartSummaryCopyWith<$Res>
     implements $CartSummaryCopyWith<$Res> {
   factory _$CartSummaryCopyWith(
@@ -217,6 +207,7 @@ abstract class _$CartSummaryCopyWith<$Res>
   $Res call({int quantity, int totalPrice});
 }
 
+/// @nodoc
 class __$CartSummaryCopyWithImpl<$Res> extends _$CartSummaryCopyWithImpl<$Res>
     implements _$CartSummaryCopyWith<$Res> {
   __$CartSummaryCopyWithImpl(
@@ -228,20 +219,26 @@ class __$CartSummaryCopyWithImpl<$Res> extends _$CartSummaryCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object quantity = freezed,
-    Object totalPrice = freezed,
+    Object? quantity = freezed,
+    Object? totalPrice = freezed,
   }) {
     return _then(_CartSummary(
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
-      totalPrice: totalPrice == freezed ? _value.totalPrice : totalPrice as int,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPrice: totalPrice == freezed
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-class _$_CartSummary implements _CartSummary {
-  _$_CartSummary({this.quantity = 0, this.totalPrice = 0})
-      : assert(quantity != null),
-        assert(totalPrice != null);
+/// @nodoc
+
+class _$_CartSummary extends _CartSummary {
+  _$_CartSummary({this.quantity = 0, this.totalPrice = 0}) : super._();
 
   @JsonKey(defaultValue: 0)
   @override
@@ -250,33 +247,9 @@ class _$_CartSummary implements _CartSummary {
   @override
   final int totalPrice;
 
-  bool _didstate = false;
-  String _state;
-
-  @override
-  String get state {
-    if (_didstate == false) {
-      _didstate = true;
-      _state = 'カート($quantity)';
-    }
-    return _state;
-  }
-
-  bool _didtotalPriceState = false;
-  String _totalPriceState;
-
-  @override
-  String get totalPriceState {
-    if (_didtotalPriceState == false) {
-      _didtotalPriceState = true;
-      _totalPriceState = '合計金額 $totalPrice円+税';
-    }
-    return _totalPriceState;
-  }
-
   @override
   String toString() {
-    return 'CartSummary(quantity: $quantity, totalPrice: $totalPrice, state: $state, totalPriceState: $totalPriceState)';
+    return 'CartSummary(quantity: $quantity, totalPrice: $totalPrice)';
   }
 
   @override
@@ -297,18 +270,22 @@ class _$_CartSummary implements _CartSummary {
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(totalPrice);
 
+  @JsonKey(ignore: true)
   @override
   _$CartSummaryCopyWith<_CartSummary> get copyWith =>
       __$CartSummaryCopyWithImpl<_CartSummary>(this, _$identity);
 }
 
-abstract class _CartSummary implements CartSummary {
+abstract class _CartSummary extends CartSummary {
   factory _CartSummary({int quantity, int totalPrice}) = _$_CartSummary;
+  _CartSummary._() : super._();
 
   @override
-  int get quantity;
+  int get quantity => throw _privateConstructorUsedError;
   @override
-  int get totalPrice;
+  int get totalPrice => throw _privateConstructorUsedError;
   @override
-  _$CartSummaryCopyWith<_CartSummary> get copyWith;
+  @JsonKey(ignore: true)
+  _$CartSummaryCopyWith<_CartSummary> get copyWith =>
+      throw _privateConstructorUsedError;
 }
