@@ -26,7 +26,7 @@ void main() {
     final provider = Provider((ref) => ref);
     ref = container.read(provider); /// ref=itemsFetcherをreadできるようにした？
     // Wait for items loaded
-    final itemsController = ref.read(itemsProvider);
+    final itemsController = ref.read(itemsProvider.notifier);
     /// expectLater:非同期の比較？
     await expectLater(
       itemsController.stream.map((s) => s.isLoading).first,

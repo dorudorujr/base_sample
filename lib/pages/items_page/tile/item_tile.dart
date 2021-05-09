@@ -7,12 +7,12 @@ import 'package:base_sample/pages/items_page/tile/item_tile_controller.dart';
 //import 'package:base_sample/util/logger.dart';
 import 'package:base_sample/widgets/widgets.dart';
 
-final itemTileProviders =
-  StateNotifierProvider.autoDispose.family<ItemTileController, ItemTileState, int>(
-    (ref, id) => ItemTileController(
-    ref.read,
-    id: id,
-  ));
+final itemTileProviders = StateNotifierProvider.autoDispose
+    .family<ItemTileController, ItemTileState, int>(
+        (ref, id) => ItemTileController(
+      ref.read,
+      id: id,
+    ));
 
 class ItemTile extends HookWidget {
   ItemTile({

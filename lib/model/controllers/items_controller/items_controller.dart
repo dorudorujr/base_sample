@@ -8,7 +8,9 @@ import 'items_state.dart';
 export 'items_state.dart';
 
 /// APIから商品情報を取得する
-final itemsProvider = StateNotifierProvider((ref) => ItemsController(ref.read));
+final itemsProvider = StateNotifierProvider<ItemsController, ItemsState>(
+      (ref) => ItemsController(ref.read),
+);
 
 /// APIから商品情報を取得するController
 class ItemsController extends StateNotifier<ItemsState> {

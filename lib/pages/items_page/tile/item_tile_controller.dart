@@ -31,7 +31,7 @@ class ItemTileController extends StateNotifier<ItemTileState> {
   late final VoidCallback _cartControllerRemoveListener;
 
   /// idを元にAPIから取得した商品を取得する
-  ItemStock get stock => _read(itemsProvider).state.stock(id);
+  ItemStock get stock => _read(itemsProvider).stock(id);
 
   /// カートに商品を追加
   void addToCart() => _read(cartProvider.notifier).add(stock.item);

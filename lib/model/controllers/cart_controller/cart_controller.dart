@@ -6,7 +6,9 @@ import 'cart_state.dart';
 
 export 'cart_state.dart';
 
-final cartProvider = StateNotifierProvider<CartController, CartState>((ref) => CartController());
+final cartProvider = StateNotifierProvider<CartController, CartState>(
+      (ref) => CartController(),
+);
 
 class CartController extends StateNotifier<CartState> {
   CartController() : super(CartState());
@@ -31,7 +33,6 @@ class CartController extends StateNotifier<CartState> {
 
   /// カートの商品を削除
   void delete(Item item) {
-    if (state.itemMap[item.id] == null) { return; }
     state = state.copyWith(
       itemMap: {
         ...state.itemMap,
