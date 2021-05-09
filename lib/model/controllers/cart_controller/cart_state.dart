@@ -31,7 +31,8 @@ abstract class CartState implements _$CartState {
   /// 与えられたitemと一致するものをitemMapから取得する
   CartItem cartItem(Item item) => sortedItems.firstWhere(
       (cartItem) => cartItem.item == item,
-    orElse: () => null,
+      ///TODO: 問題ないか確認
+      //orElse: () => null,
   );
 }
 
