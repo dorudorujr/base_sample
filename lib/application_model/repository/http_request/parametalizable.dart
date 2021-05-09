@@ -6,7 +6,9 @@ abstract class Parameterizable {
 
 /// Query Parameters用
 abstract class PathParameterizable extends Parameterizable {
-  PathParameterizable({required this.queryParameters});
+  PathParameterizable({
+    required this.queryParameters
+  });
 
   Map<String, String> queryParameters;
 }

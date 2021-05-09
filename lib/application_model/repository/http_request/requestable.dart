@@ -4,6 +4,11 @@ import 'package:base_sample/application_model/repository/http_request/request_ba
 
 abstract class Requestable extends RequestBase {
 
+  Requestable({
+    this.hostName = "",
+    this.path = ""
+  });
+
   /// 通信先情報
   String hostName;
   String path;

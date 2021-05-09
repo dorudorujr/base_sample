@@ -1,11 +1,11 @@
 class AccountInfo {
 
   AccountInfo({
-    this.accountId,
-    this.mailAddress,
-    this.lastName,
-    this.firstName,
-    this.statusName
+    required this.accountId,
+    required this.mailAddress,
+    required this.lastName,
+    required this.firstName,
+    required this.statusName
   });
 
   /// デコード用 factory コンストラクタ
