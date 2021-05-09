@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'items_state.dart';
 
@@ -9,10 +9,13 @@ part of 'items_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$ItemsStateTearOff {
   const _$ItemsStateTearOff();
 
-// ignore: unused_element
   _ItemsState call(
       {List<ItemStock> stocks = const <ItemStock>[], bool isLoading = true}) {
     return _ItemsState(
@@ -22,16 +25,20 @@ class _$ItemsStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ItemsState = _$ItemsStateTearOff();
 
+/// @nodoc
 mixin _$ItemsState {
-  List<ItemStock> get stocks;
-  bool get isLoading;
+  List<ItemStock> get stocks => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
-  $ItemsStateCopyWith<ItemsState> get copyWith;
+  @JsonKey(ignore: true)
+  $ItemsStateCopyWith<ItemsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ItemsStateCopyWith<$Res> {
   factory $ItemsStateCopyWith(
           ItemsState value, $Res Function(ItemsState) then) =
@@ -39,6 +46,7 @@ abstract class $ItemsStateCopyWith<$Res> {
   $Res call({List<ItemStock> stocks, bool isLoading});
 }
 
+/// @nodoc
 class _$ItemsStateCopyWithImpl<$Res> implements $ItemsStateCopyWith<$Res> {
   _$ItemsStateCopyWithImpl(this._value, this._then);
 
@@ -48,16 +56,23 @@ class _$ItemsStateCopyWithImpl<$Res> implements $ItemsStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object stocks = freezed,
-    Object isLoading = freezed,
+    Object? stocks = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
-      stocks: stocks == freezed ? _value.stocks : stocks as List<ItemStock>,
-      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
+      stocks: stocks == freezed
+          ? _value.stocks
+          : stocks // ignore: cast_nullable_to_non_nullable
+              as List<ItemStock>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$ItemsStateCopyWith<$Res> implements $ItemsStateCopyWith<$Res> {
   factory _$ItemsStateCopyWith(
           _ItemsState value, $Res Function(_ItemsState) then) =
@@ -66,6 +81,7 @@ abstract class _$ItemsStateCopyWith<$Res> implements $ItemsStateCopyWith<$Res> {
   $Res call({List<ItemStock> stocks, bool isLoading});
 }
 
+/// @nodoc
 class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
     implements _$ItemsStateCopyWith<$Res> {
   __$ItemsStateCopyWithImpl(
@@ -77,21 +93,27 @@ class __$ItemsStateCopyWithImpl<$Res> extends _$ItemsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object stocks = freezed,
-    Object isLoading = freezed,
+    Object? stocks = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_ItemsState(
-      stocks: stocks == freezed ? _value.stocks : stocks as List<ItemStock>,
-      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
+      stocks: stocks == freezed
+          ? _value.stocks
+          : stocks // ignore: cast_nullable_to_non_nullable
+              as List<ItemStock>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_ItemsState extends _ItemsState {
   _$_ItemsState({this.stocks = const <ItemStock>[], this.isLoading = true})
-      : assert(stocks != null),
-        assert(isLoading != null),
-        super._();
+      : super._();
 
   @JsonKey(defaultValue: const <ItemStock>[])
   @override
@@ -100,23 +122,9 @@ class _$_ItemsState extends _ItemsState {
   @override
   final bool isLoading;
 
-  bool _did_map = false;
-  Map<int, ItemStock> __map;
-
-  @override
-  Map<int, ItemStock> get _map {
-    if (_did_map == false) {
-      _did_map = true;
-      __map = Map.fromEntries(
-        stocks.map((s) => MapEntry(s.item.id, s)),
-      );
-    }
-    return __map;
-  }
-
   @override
   String toString() {
-    return 'ItemsState(stocks: $stocks, isLoading: $isLoading, _map: $_map)';
+    return 'ItemsState(stocks: $stocks, isLoading: $isLoading)';
   }
 
   @override
@@ -136,19 +144,22 @@ class _$_ItemsState extends _ItemsState {
       const DeepCollectionEquality().hash(stocks) ^
       const DeepCollectionEquality().hash(isLoading);
 
+  @JsonKey(ignore: true)
   @override
   _$ItemsStateCopyWith<_ItemsState> get copyWith =>
       __$ItemsStateCopyWithImpl<_ItemsState>(this, _$identity);
 }
 
 abstract class _ItemsState extends ItemsState {
-  _ItemsState._() : super._();
   factory _ItemsState({List<ItemStock> stocks, bool isLoading}) = _$_ItemsState;
+  _ItemsState._() : super._();
 
   @override
-  List<ItemStock> get stocks;
+  List<ItemStock> get stocks => throw _privateConstructorUsedError;
   @override
-  bool get isLoading;
+  bool get isLoading => throw _privateConstructorUsedError;
   @override
-  _$ItemsStateCopyWith<_ItemsState> get copyWith;
+  @JsonKey(ignore: true)
+  _$ItemsStateCopyWith<_ItemsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -7,7 +7,7 @@ abstract class ItemTileState with _$ItemTileState {
   factory ItemTileState({
     @Default(0) int quantity,
   }) = _ItemTileState;
+  ItemTileState._();
 
-  /// TODO: finalでいい？
-  late bool hasStock = quantity > 0;
+  late final bool hasStock = quantity > 0;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'cart_item.dart';
 
@@ -9,11 +9,14 @@ part of 'cart_item.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$CartItemTearOff {
   const _$CartItemTearOff();
 
-// ignore: unused_element
-  _CartItem call({@required Item item, @required int quantity}) {
+  _CartItem call({required Item item, required int quantity}) {
     return _CartItem(
       item: item,
       quantity: quantity,
@@ -21,16 +24,20 @@ class _$CartItemTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $CartItem = _$CartItemTearOff();
 
+/// @nodoc
 mixin _$CartItem {
-  Item get item;
-  int get quantity;
+  Item get item => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
 
-  $CartItemCopyWith<CartItem> get copyWith;
+  @JsonKey(ignore: true)
+  $CartItemCopyWith<CartItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CartItemCopyWith<$Res> {
   factory $CartItemCopyWith(CartItem value, $Res Function(CartItem) then) =
       _$CartItemCopyWithImpl<$Res>;
@@ -39,6 +46,7 @@ abstract class $CartItemCopyWith<$Res> {
   $ItemCopyWith<$Res> get item;
 }
 
+/// @nodoc
 class _$CartItemCopyWithImpl<$Res> implements $CartItemCopyWith<$Res> {
   _$CartItemCopyWithImpl(this._value, this._then);
 
@@ -48,26 +56,30 @@ class _$CartItemCopyWithImpl<$Res> implements $CartItemCopyWith<$Res> {
 
   @override
   $Res call({
-    Object item = freezed,
-    Object quantity = freezed,
+    Object? item = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_value.copyWith(
-      item: item == freezed ? _value.item : item as Item,
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $ItemCopyWith<$Res> get item {
-    if (_value.item == null) {
-      return null;
-    }
     return $ItemCopyWith<$Res>(_value.item, (value) {
       return _then(_value.copyWith(item: value));
     });
   }
 }
 
+/// @nodoc
 abstract class _$CartItemCopyWith<$Res> implements $CartItemCopyWith<$Res> {
   factory _$CartItemCopyWith(_CartItem value, $Res Function(_CartItem) then) =
       __$CartItemCopyWithImpl<$Res>;
@@ -78,6 +90,7 @@ abstract class _$CartItemCopyWith<$Res> implements $CartItemCopyWith<$Res> {
   $ItemCopyWith<$Res> get item;
 }
 
+/// @nodoc
 class __$CartItemCopyWithImpl<$Res> extends _$CartItemCopyWithImpl<$Res>
     implements _$CartItemCopyWith<$Res> {
   __$CartItemCopyWithImpl(_CartItem _value, $Res Function(_CartItem) _then)
@@ -88,21 +101,26 @@ class __$CartItemCopyWithImpl<$Res> extends _$CartItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object item = freezed,
-    Object quantity = freezed,
+    Object? item = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_CartItem(
-      item: item == freezed ? _value.item : item as Item,
-      quantity: quantity == freezed ? _value.quantity : quantity as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_CartItem extends _CartItem {
-  _$_CartItem({@required this.item, @required this.quantity})
-      : assert(item != null),
-        assert(quantity != null),
-        super._();
+  _$_CartItem({required this.item, required this.quantity}) : super._();
 
   @override
   final Item item;
@@ -131,20 +149,22 @@ class _$_CartItem extends _CartItem {
       const DeepCollectionEquality().hash(item) ^
       const DeepCollectionEquality().hash(quantity);
 
+  @JsonKey(ignore: true)
   @override
   _$CartItemCopyWith<_CartItem> get copyWith =>
       __$CartItemCopyWithImpl<_CartItem>(this, _$identity);
 }
 
 abstract class _CartItem extends CartItem {
+  factory _CartItem({required Item item, required int quantity}) = _$_CartItem;
   _CartItem._() : super._();
-  factory _CartItem({@required Item item, @required int quantity}) =
-      _$_CartItem;
 
   @override
-  Item get item;
+  Item get item => throw _privateConstructorUsedError;
   @override
-  int get quantity;
+  int get quantity => throw _privateConstructorUsedError;
   @override
-  _$CartItemCopyWith<_CartItem> get copyWith;
+  @JsonKey(ignore: true)
+  _$CartItemCopyWith<_CartItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
