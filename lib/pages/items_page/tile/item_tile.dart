@@ -16,7 +16,7 @@ final itemTileProviders =
 
 class ItemTile extends HookWidget {
   ItemTile({
-    @required this.id,
+    required this.id,
   }) : super(key: ValueKey(id));  /// keyを意図的に変えてrebuildが起きる(表示している内容を更新)ようにしている?
 
   final int id;
@@ -59,8 +59,8 @@ class ItemTile extends HookWidget {
 
 class _AddButton extends HookWidget {
   const _AddButton({
-    Key key,
-    @required this.id,
+    Key? key,
+    required this.id,
   }) : super(key: key);
 
   final int id;

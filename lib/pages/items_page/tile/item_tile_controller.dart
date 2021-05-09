@@ -10,7 +10,7 @@ export 'item_tile_state.dart';
 class ItemTileController extends StateNotifier<ItemTileState> {
   ItemTileController(
     this._read, {
-      @required this.id,  /// idを持ったMap?
+      required this.id,  /// idを持ったMap?
     }) : super(ItemTileState()) {
     /// 在庫の更新処理
     /// カート情報が更新されたら呼び出される
@@ -28,7 +28,7 @@ class ItemTileController extends StateNotifier<ItemTileState> {
   final Reader _read;
 
   final int id;
-  VoidCallback _cartControllerRemoveListener;
+  late final VoidCallback _cartControllerRemoveListener;
 
   /// idを元にAPIから取得した商品を取得する
   ItemStock get stock => _read(itemsProvider).state.stock(id);

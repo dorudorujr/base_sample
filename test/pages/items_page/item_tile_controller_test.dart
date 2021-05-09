@@ -6,7 +6,7 @@ import 'package:base_sample/model/model.dart';
 import 'package:base_sample/pages/items_page/tile/item_tile.dart';
 
 void main() {
-  ProviderContainer container;
+  late ProviderContainer container;
   ProviderReference ref;
   final stock = ItemStock(
     item: Item(
